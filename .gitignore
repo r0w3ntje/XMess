@@ -1,0 +1,6 @@
+Unity/XMess/Library/
+Unity/XMess/Temp/
+*.csproj
+*.sln
+Unity/XMess/.vs/
+Unity/XMess/obj/
