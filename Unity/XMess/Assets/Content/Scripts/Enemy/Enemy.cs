@@ -41,4 +41,13 @@ public class Enemy : MonoBehaviour
 
         rb2d.velocity = new Vector2(xDir * moveSpeed * Time.deltaTime, rb2d.velocity.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+    }
 }
