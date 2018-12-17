@@ -47,6 +47,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
