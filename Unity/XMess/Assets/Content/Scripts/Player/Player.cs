@@ -31,10 +31,12 @@ public class Player : Singleton<Player>
             if (Input.GetKey(Controls.Instance().left))
             {
                 rb2d.velocity = new Vector2(-moveSpeed * Time.deltaTime, rb2d.velocity.y);
+                transform.localScale = new Vector2(-1, transform.localScale.y);
             }
             else
             {
                 rb2d.velocity = new Vector2(moveSpeed * Time.deltaTime, rb2d.velocity.y);
+                transform.localScale = new Vector2(1, transform.localScale.y);
             }
         }
         else
