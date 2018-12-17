@@ -26,28 +26,38 @@ public class Player : Singleton<Player>
 
     private void Movement()
     {
-        if (Input.GetKey(Controls.Instance().left) || Input.GetKey(Controls.Instance().right))
-        {
-            if (Input.GetKey(Controls.Instance().left))
-            {
-                rb2d.velocity = new Vector2(-moveSpeed * Time.deltaTime, rb2d.velocity.y);
-                transform.localScale = new Vector2(-1, transform.localScale.y);
-            }
-            else
-            {
-                rb2d.velocity = new Vector2(moveSpeed * Time.deltaTime, rb2d.velocity.y);
-                transform.localScale = new Vector2(1, transform.localScale.y);
-            }
-        }
-        else
-        {
-            rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
-        }
+        float x = Input.GetAxis("Horizontal");
+
+        rb2d.velocity = new Vector2(x * moveSpeed * Time.deltaTime, rb2d.velocity.y);
+
+        if (x < 0)
+            transform.localScale = new Vector2(-1, transform.localScale.y);
+        else if (x > 0)
+            transform.localScale = new Vector2(1, transform.localScale.y);
+
+
+        //if (Input.GetKey(Controls.Instance().left) || Input.GetKey(Controls.Instance().right))
+        //{
+        //    if (Input.GetKey(Controls.Instance().left))
+        //    {
+        //        rb2d.velocity = new Vector2(-moveSpeed * Time.deltaTime, rb2d.velocity.y);
+        //        transform.localScale = new Vector2(-1, transform.localScale.y);
+        //    }
+        //    else
+        //    {
+        //        rb2d.velocity = new Vector2(moveSpeed * Time.deltaTime, rb2d.velocity.y);
+        //        transform.localScale = new Vector2(1, transform.localScale.y);
+        //    }
+        //}
+        //else
+        //{
+        //    rb2d.velocity = new Vector2(0f, rb2d.velocity.y);
+        //}
     }
 
     private void Jump()
     {
-        if (Input.GetKeyDown(Controls.Instance().jump) && IsGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb2d.velocity = new Vector2(0f, 0f);
             rb2d.AddForce(new Vector2(0f, jumpForce));
