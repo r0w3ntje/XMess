@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114339223023548434}
   - component: {fileID: 61704652120753142}
   - component: {fileID: 50177339521188932}
+  - component: {fileID: 95529902555768070}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171651062593666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 1.67, z: 0}
+  m_LocalPosition: {x: 26.47, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108658702945678}
@@ -117,6 +118,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.56}
   m_EdgeRadius: 0
+--- !u!95 &95529902555768070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1171651062593666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b571f45bf177d2745998b3076733abac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114339223023548434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cff67da4ac7a7499cff072a3ed4e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  moveSpeed: 180
+  health: 1
+  maxHealth: 1
+  moveSpeed: 250
+  damage: 0
 --- !u!212 &212206438710614908
 SpriteRenderer:
   m_ObjectHideFlags: 1

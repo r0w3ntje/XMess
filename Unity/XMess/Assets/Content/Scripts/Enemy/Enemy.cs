@@ -10,13 +10,15 @@ public class Enemy : MonoBehaviour
 
     private float xDir;
 
-    private Rigidbody2D rb2d;
-
     public int damage;
+
+    private Rigidbody2D rb2d;
+    private Animator ac;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        ac = GetComponent<Animator>();
 
         health = maxHealth;
     }
@@ -33,16 +35,19 @@ public class Enemy : MonoBehaviour
     {
         if (Player.Instance().transform.position.x > transform.position.x + 0.3f)
         {
+            ac.SetBool("Walk", true);
             xDir = 1;
             transform.localScale = new Vector2(-1, transform.localScale.y);
         }
         else if (Player.Instance().transform.position.x < transform.position.x - 0.3f)
         {
+            ac.SetBool("Walk", true);
             xDir = -1;
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
         else
         {
+            ac.SetBool("Walk", false);
             return;
         }
 
@@ -55,11 +60,11 @@ public class Enemy : MonoBehaviour
         {
             health -= collision.GetComponent<Bullet>().damage;
 
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
 
             if (health <= 0)
             {
-                Destroy(collision.gameObject);
+                Destroy(gameObject);
                 EnemySpawnManager.Instance().NextWaveCheck();
             }
         }
