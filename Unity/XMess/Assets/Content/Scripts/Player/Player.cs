@@ -7,6 +7,7 @@ public class Player : Singleton<Player>
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
+    private bool doubleJumped;
 
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
@@ -26,6 +27,8 @@ public class Player : Singleton<Player>
     {
         Jump();
         Movement();
+
+        if (IsGrounded()) doubleJumped = false;
     }
 
     private void Movement()
@@ -46,6 +49,13 @@ public class Player : Singleton<Player>
         {
             rb2d.velocity = new Vector2(0f, 0f);
             rb2d.AddForce(new Vector2(0f, jumpForce));
+        }
+        else if (Input.GetButtonDown("Jump") && !IsGrounded() && !doubleJumped)
+        {
+            rb2d.velocity = new Vector2(0f, 0f);
+            rb2d.AddForce(new Vector2(0f, jumpForce));
+
+            doubleJumped = true;
         }
     }
 
