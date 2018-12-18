@@ -672,7 +672,7 @@ MonoBehaviour:
   spawnPosition:
   - {x: -25, y: 1}
   - {x: 25, y: 1}
-  spawnDelay: 0.25
+  spawnDelay: 0.15
   wave: 0
   waves:
   - enemies: 10
