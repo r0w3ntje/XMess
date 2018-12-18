@@ -48,6 +48,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
 
         for (int i = 0; i < Mathf.RoundToInt(wave * 5f); i++)
         {
+            if (PlayerHealth.Instance().isDead) break;
             var enemy = Instantiate(enemyPrefab);
             enemy.transform.position = GetSpawnPosition();
             yield return new WaitForSeconds(spawnDelay);
@@ -63,7 +64,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
 
     public void NextWaveCheck()
     {
-        if (Player.Instance().isDead) return;
+        if (PlayerHealth.Instance().isDead) return;
 
         var enemies = FindObjectsOfType<Enemy>();
 

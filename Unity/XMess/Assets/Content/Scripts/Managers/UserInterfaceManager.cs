@@ -6,6 +6,20 @@ using UnityEngine;
 
 public class UserInterfaceManager : Singleton<UserInterfaceManager>
 {
+    [Header("UserInterface")]
+    [SerializeField] private GameObject gameOverScreen;
+
+    private void Start()
+    {
+        GameOverScreen(false);
+    }
+
+    public void GameOverScreen(bool _enable)
+    {
+        if (gameOverScreen != null)
+            gameOverScreen.SetActive(_enable);
+    }
+
     public void PopEffect(Transform _transform)
     {
         StartCoroutine(Effect(_transform));

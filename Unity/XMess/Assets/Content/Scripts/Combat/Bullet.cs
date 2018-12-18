@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
 
     [HideInInspector] public float xDirection;
 
+    public int damage;
+
     private void Start()
     {
         Destroy(gameObject, destroyAfterSeconds);

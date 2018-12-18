@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] private int health, maxHealth;
 
     [SerializeField] private float moveSpeed;
 
@@ -12,14 +12,21 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb2d;
 
+    public int damage;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        health = maxHealth;
     }
 
     private void Update()
     {
         Movement();
+
+        if (PlayerHealth.Instance().isDead)
+            Destroy(gameObject);
     }
 
     private void Movement()
@@ -46,9 +53,15 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
+            health -= collision.GetComponent<Bullet>().damage;
+
             Destroy(gameObject);
-            Destroy(collision.gameObject);
-            EnemySpawnManager.Instance().NextWaveCheck();
+
+            if (health <= 0)
+            {
+                Destroy(collision.gameObject);
+                EnemySpawnManager.Instance().NextWaveCheck();
+            }
         }
     }
 }
