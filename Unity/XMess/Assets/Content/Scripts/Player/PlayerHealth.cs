@@ -74,7 +74,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
             hearts[i].SetActive(true);
         }
 
-        for (int i = health + 1; i < hearts.Count - 1; i++)
+        for (int i = health; i < hearts.Count; i++)
         {
             hearts[i].SetActive(false);
             UserInterfaceManager.Instance().PopEffect(hearts[i].transform);
