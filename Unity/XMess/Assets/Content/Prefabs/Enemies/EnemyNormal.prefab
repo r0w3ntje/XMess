@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50177339521188932}
   - component: {fileID: 95529902555768070}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyNormal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
-  moveSpeed: 250
+  moveSpeed: 384
   damage: 1
 --- !u!212 &212206438710614908
 SpriteRenderer:

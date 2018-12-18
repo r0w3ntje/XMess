@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class EnemySpawnManager : Singleton<EnemySpawnManager>
 {
     [Header("Prefabs")]
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject enemyMutant;
+    [SerializeField] private GameObject enemyNormal;
 
     [Header("Spawning")]
     [SerializeField] private List<Vector2> spawnPosition;
@@ -49,9 +50,20 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
         for (int i = 0; i < Mathf.RoundToInt(wave * 5f); i++)
         {
             if (PlayerHealth.Instance().isDead) break;
-            var enemy = Instantiate(enemyPrefab);
+
+            GameObject enemyGo = null;
+
+            float enemyChance = Random.Range(0f, 100f);
+            if (enemyChance >= 75f)
+            {
+                enemyGo = enemyMutant;
+            }
+            else enemyGo = enemyNormal;
+
+            var enemy = Instantiate(enemyGo);
             enemy.transform.position = GetSpawnPosition();
-            yield return new WaitForSeconds(spawnDelay);
+
+            yield return new WaitForSeconds(spawnDelay / wave);
         }
 
         waveRoutine = null;

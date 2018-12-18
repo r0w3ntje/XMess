@@ -667,7 +667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e56821089fdad947bf6b1ee9cbe7833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1171651062593666, guid: 2a4ae87682b36e847bec33210e8efa66,
+  enemyMutant: {fileID: 1171651062593666, guid: 985ea2a8bc257e340ad9c6e1d09a0179,
+    type: 2}
+  enemyNormal: {fileID: 1171651062593666, guid: 2a4ae87682b36e847bec33210e8efa66,
     type: 2}
   spawnPosition:
   - {x: -25, y: 1}
