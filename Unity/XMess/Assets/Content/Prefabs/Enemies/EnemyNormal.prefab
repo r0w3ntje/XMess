@@ -147,9 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cff67da4ac7a7499cff072a3ed4e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
   maxHealth: 1
-  moveSpeed: 384
+  moveSpeed: 400
   damage: 1
 --- !u!212 &212206438710614908
 SpriteRenderer:
@@ -186,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -100
-  m_Sprite: {fileID: 21300000, guid: 3ae781e0f75ffd0408458e39d400e628, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 10b0c89cab869f94187af4ae3d315200, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

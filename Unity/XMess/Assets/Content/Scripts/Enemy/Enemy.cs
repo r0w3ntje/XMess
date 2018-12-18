@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int health, maxHealth;
+    private int health;
+    [SerializeField] private int maxHealth;
 
     [SerializeField] private float moveSpeed;
 
@@ -64,6 +65,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             health -= collision.GetComponent<Bullet>().damage;
+            ac.SetTrigger("Hit");
 
             Destroy(collision.gameObject);
 
