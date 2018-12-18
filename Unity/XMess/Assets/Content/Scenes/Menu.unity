@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Play 'Y'
 --- !u!222 &335397953
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 1543904157}
   - component: {fileID: 1543904160}
   - component: {fileID: 1543904159}
+  - component: {fileID: 1543904161}
   - component: {fileID: 1543904158}
   m_Layer: 5
   m_Name: PlayButton
@@ -473,6 +474,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543904156}
   m_CullTransparentMesh: 0
+--- !u!114 &1543904161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543904156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b36223d5e98b1439726d94616b986c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593610564
 GameObject:
   m_ObjectHideFlags: 0

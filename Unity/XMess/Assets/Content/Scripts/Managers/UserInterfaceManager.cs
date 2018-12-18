@@ -29,7 +29,7 @@ public class UserInterfaceManager : Singleton<UserInterfaceManager>
     {
         float delay = 0.05f;
 
-        _transform.DOScale(1.2f, delay);
+        _transform.DOScale(1.1f, delay);
         yield return new WaitForSeconds(delay);
         _transform.DOScale(1f, delay);
     }

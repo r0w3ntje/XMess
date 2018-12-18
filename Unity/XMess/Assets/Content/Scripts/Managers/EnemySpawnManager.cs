@@ -23,7 +23,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
 
     private Coroutine waveRoutine;
 
-    private void Start()
+    public void Start()
     {
         wave = 0;
         NextWaveCheck();
