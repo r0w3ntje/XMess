@@ -13,9 +13,13 @@ public class Player : Singleton<Player>
 
     private Rigidbody2D rb2d;
 
+    private Vector2 respawnPos;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        respawnPos = transform.position;
     }
 
     private void Update()
@@ -48,5 +52,10 @@ public class Player : Singleton<Player>
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), groundCheckRadius, groundLayer);
+    }
+
+    public void Respawn()
+    {
+        transform.position = respawnPos;
     }
 }

@@ -10,13 +10,13 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     public bool isDead;
 
-    [SerializeField] private Text healthText;
+    [SerializeField] private List<GameObject> hearts;
 
     private void Start()
     {
         isDead = false;
         health = maxHealth;
-        UpdateTexts();
+        UpdateHealthUI();
     }
 
     private void TakeDamage(int _amount)
@@ -25,18 +25,22 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
         if (health <= 0)
         {
-            isDead = true;
-            UserInterfaceManager.Instance().GameOverScreen(true);
+            Dead();
         }
 
-        UpdateTexts();
+        UpdateHealthUI();
     }
 
     private void Update()
     {
-        if (isDead && Input.GetButton("Restart"))
+        if (isDead && Input.GetButtonDown("Restart"))
         {
             Restart();
+        }
+
+        if (transform.position.y < -32f)
+        {
+            Dead();
         }
     }
 
@@ -48,15 +52,32 @@ public class PlayerHealth : Singleton<PlayerHealth>
         }
     }
 
-    private void Restart()
+    private void Dead()
     {
-        isDead = false;
+        isDead = true;
         UserInterfaceManager.Instance().GameOverScreen(true);
     }
 
-    private void UpdateTexts()
+    private void Restart()
     {
-        healthText.text = "Health: " + health;
-        UserInterfaceManager.Instance().PopEffect(healthText.transform);
+        isDead = false;
+        UserInterfaceManager.Instance().GameOverScreen(false);
+        EnemySpawnManager.Instance().Start();
+        Player.Instance().Respawn();
+        Start();
+    }
+
+    private void UpdateHealthUI()
+    {
+        for (int i = 0; i < hearts.Count; i++)
+        {
+            hearts[i].SetActive(true);
+        }
+
+        for (int i = health + 1; i < hearts.Count - 1; i++)
+        {
+            hearts[i].SetActive(false);
+            UserInterfaceManager.Instance().PopEffect(hearts[i].transform);
+        }
     }
 }
