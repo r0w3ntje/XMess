@@ -29,6 +29,11 @@ public class Enemy : MonoBehaviour
 
         if (PlayerHealth.Instance().isDead)
             Destroy(gameObject);
+
+        if (transform.position.y < -32f)
+        {
+            Dead();
+        }
     }
 
     private void Movement()
@@ -64,9 +69,14 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
-                EnemySpawnManager.Instance().NextWaveCheck();
+                Dead();
             }
         }
+    }
+
+    private void Dead()
+    {
+        Destroy(gameObject);
+        EnemySpawnManager.Instance().NextWaveCheck();
     }
 }
