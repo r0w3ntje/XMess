@@ -48,6 +48,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            EnemySpawnManager.Instance().NextWaveCheck();
         }
     }
 }

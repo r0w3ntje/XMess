@@ -13,9 +13,13 @@ public class Player : Singleton<Player>
 
     private Rigidbody2D rb2d;
 
+    public bool isDead;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
+        isDead = false;
     }
 
     private void Update()
