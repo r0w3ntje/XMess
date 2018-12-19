@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            SoundManager.Instance().PlayGunShot();
             GameObject go = Instantiate(bullet, gunPoint.position, Quaternion.identity);
             go.GetComponent<Bullet>().xDirection = Player.Instance().transform.localScale.x;
         }

@@ -6,12 +6,38 @@ public class SoundManager : Singleton<SoundManager>
     [Header("Sound Instance Prefab")]
     public GameObject soundInstance;
 
-    [Header("Sounds")]
-    public AudioClip monster;
+    [Header("Demon Sounds")]
+    public AudioClip spawnDemonScreetch;    
+    public AudioClip deathDemonSplat;
+    [Header("Gun Sounds")]
+    public AudioClip gunShot;
+    [Header("Player Sounds")]
+    public AudioClip playerDeath;
+    public AudioClip playerJump;
 
-    public void PlayMonsterSound()
+    public void PlayDemonScreetch()
     {
-        PlaySound(monster);
+        PlaySound(spawnDemonScreetch);
+    }
+
+    public void PlayDemonDeath()
+    {
+        PlaySound(deathDemonSplat);
+    }
+
+    public void PlayGunShot()
+    {
+        PlaySound(gunShot);
+    }
+
+    public void PlayPlayerDeath()
+    {
+        PlaySound(playerDeath);
+    }
+
+    public void PlayPlayerJump()
+    {
+        PlaySound(playerJump);
     }
 
     public void PlaySound(AudioClip _ac)

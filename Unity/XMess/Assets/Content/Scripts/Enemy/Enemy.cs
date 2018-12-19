@@ -78,6 +78,7 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
+        SoundManager.Instance().PlayDemonDeath();
         Destroy(gameObject);
         EnemySpawnManager.Instance().NextWaveCheck();
     }

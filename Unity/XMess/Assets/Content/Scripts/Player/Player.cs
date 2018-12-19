@@ -44,14 +44,16 @@ public class Player : Singleton<Player>
     }
 
     private void Jump()
-    {
+    {        
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            SoundManager.Instance().PlayPlayerJump();
             rb2d.velocity = new Vector2(0f, 0f);
             rb2d.AddForce(new Vector2(0f, jumpForce));
         }
         else if (Input.GetButtonDown("Jump") && !IsGrounded() && !doubleJumped)
         {
+            SoundManager.Instance().PlayPlayerJump();
             rb2d.velocity = new Vector2(0f, 0f);
             rb2d.AddForce(new Vector2(0f, jumpForce));
 
