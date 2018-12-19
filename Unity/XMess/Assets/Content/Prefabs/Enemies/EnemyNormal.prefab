@@ -150,6 +150,8 @@ MonoBehaviour:
   maxHealth: 1
   moveSpeed: 400
   damage: 1
+  deathParticle: {fileID: 1278259125513064, guid: 42add5d71999da24996b127496d5b19b,
+    type: 2}
 --- !u!212 &212206438710614908
 SpriteRenderer:
   m_ObjectHideFlags: 1

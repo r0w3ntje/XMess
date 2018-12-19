@@ -54,7 +54,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             GameObject enemyGo = null;
 
             float enemyChance = Random.Range(0f, 100f);
-            if (enemyChance >= 75f)
+            if (enemyChance >= 80f)
             {
                 enemyGo = enemyMutant;
             }
@@ -64,7 +64,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             SoundManager.Instance().PlayDemonScreetch();
             enemy.transform.position = GetSpawnPosition();
 
-            yield return new WaitForSeconds(spawnDelay / wave);
+            yield return new WaitForSeconds(spawnDelay);
         }
 
         waveRoutine = null;
