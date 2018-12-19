@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator ac;
 
+    [SerializeField] private GameObject deathParticle;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -80,6 +82,9 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
+        GameObject dp = Instantiate(deathParticle, transform.position, Quaternion.identity);
+        Destroy(dp, 0.5f);
+
         Destroy(gameObject);
         EnemySpawnManager.Instance().NextWaveCheck();
     }
