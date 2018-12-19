@@ -54,6 +54,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
     private void Dead()
     {
+        SoundManager.Instance().PlayPlayerDeath();
         isDead = true;
         UserInterfaceManager.Instance().GameOverScreen(true);
     }

@@ -82,9 +82,13 @@ public class Enemy : MonoBehaviour
 
     private void Dead()
     {
+<<<<<<< HEAD
+        SoundManager.Instance().PlayDemonDeath();
+=======
         GameObject dp = Instantiate(deathParticle, transform.position, Quaternion.identity);
         Destroy(dp, 0.5f);
 
+>>>>>>> 5c766dc28fd482e3f62be6aa72266039fe1c5723
         Destroy(gameObject);
         EnemySpawnManager.Instance().NextWaveCheck();
     }

@@ -1494,7 +1494,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundInstance: {fileID: 1538185130899992, guid: 0d88b02f713fdc94a911be9212ac0987,
     type: 2}
-  monster: {fileID: 0}
+  spawnDemonScreetch: {fileID: 8300000, guid: 42ce08fa169fd5f44b8bc83d346f12d3, type: 3}
+  deathDemonSplat: {fileID: 8300000, guid: d97b31b288d49a440939484923104a3a, type: 3}
+  gunShot: {fileID: 8300000, guid: 6b09312264f9bce409e9593d0dee61f5, type: 3}
+  playerDeath: {fileID: 8300000, guid: 80c3f16fa15d7ed4f9a4db1bbcfa0aee, type: 3}
+  playerJump: {fileID: 8300000, guid: e2e40a6a028427b479e48101d4599eea, type: 3}
 --- !u!1 &1869978878
 GameObject:
   m_ObjectHideFlags: 0

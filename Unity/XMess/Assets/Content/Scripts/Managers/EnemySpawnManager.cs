@@ -61,6 +61,7 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             else enemyGo = enemyNormal;
 
             var enemy = Instantiate(enemyGo);
+            SoundManager.Instance().PlayDemonScreetch();
             enemy.transform.position = GetSpawnPosition();
 
             yield return new WaitForSeconds(spawnDelay);

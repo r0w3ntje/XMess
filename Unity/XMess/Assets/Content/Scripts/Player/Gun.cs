@@ -22,7 +22,13 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && coShootRoutine == null)
         {
+<<<<<<< HEAD
+            SoundManager.Instance().PlayGunShot();
+            GameObject go = Instantiate(bullet, gunPoint.position, Quaternion.identity);
+            go.GetComponent<Bullet>().xDirection = Player.Instance().transform.localScale.x;
+=======
             coShootRoutine = StartCoroutine(CoShoot());
+>>>>>>> 5c766dc28fd482e3f62be6aa72266039fe1c5723
         }
     }
 
