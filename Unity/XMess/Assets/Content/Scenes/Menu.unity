@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Play 'Y'
+  m_Text: Play 'R'
 --- !u!222 &335397953
 CanvasRenderer:
   m_ObjectHideFlags: 0

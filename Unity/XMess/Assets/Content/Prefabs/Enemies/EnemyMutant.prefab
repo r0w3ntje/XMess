@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cff67da4ac7a7499cff072a3ed4e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 8
-  moveSpeed: 200
+  maxHealth: 5
+  moveSpeed: 150
   damage: 1
 --- !u!212 &212206438710614908
 SpriteRenderer:

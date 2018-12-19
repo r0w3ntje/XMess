@@ -37,10 +37,10 @@ public class Player : Singleton<Player>
 
         rb2d.velocity = new Vector2(x * moveSpeed * Time.deltaTime, rb2d.velocity.y);
 
-        if (x < -0.3f)
-            transform.localScale = new Vector2(-1, transform.localScale.y);
-        else if (x > 0.3f)
-            transform.localScale = new Vector2(1, transform.localScale.y);
+        //if (x < -0.25f)
+        //    transform.localScale = new Vector2(-1, transform.localScale.y);
+        //else if (x > 0.25f)
+        //    transform.localScale = new Vector2(1, transform.localScale.y);
     }
 
     private void Jump()

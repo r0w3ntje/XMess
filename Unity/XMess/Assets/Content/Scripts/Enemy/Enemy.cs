@@ -66,7 +66,8 @@ public class Enemy : MonoBehaviour
         {
             health -= collision.GetComponent<Bullet>().damage;
             ac.SetTrigger("Hit");
-            //CameraAnimator.Instance().Shake();
+
+            CameraShake.Instance().Shake(0.25f, 0.15f);
 
             Destroy(collision.gameObject);
 
